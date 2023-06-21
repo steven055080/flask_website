@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block title %}BMI計算{% endblock %}
+
+<body>
+    {% block content %}
+    <div class="section">
+        <h1>BMI計算與年齡、星座查詢</h1>
+        <form method="POST">
+            <p style="font-weight: bold;">身高、體重</p>
+            <input type="text" name="num1" placeholder="身高(cm)" required style="margin-right: 20px;font-size: 15px;">
+            <input type="text" name="num2" placeholder="體重(kg)" required style="font-size: 15px;">
+            <p style="font-weight: bold;">生日</p>
+            <p><input type="date" name="birthday" required style="font-size: 15px;"></p>
+            <button type="submit" style="margin: 10px;">計算</button>
+            <button type="button" onclick="clearTable()">清除</button>
+        </form>
+        <table border="1" height="400" width="400">
+            <tr>
+                <td>
+                    {% if result %}
+                    <h2>BMI值：{{ result }}</h2>
+                    {% if result >= 35 %}
+                    <h2>體重範圍 : 重度肥胖</h2>
+                    {% elif 35 > result >= 30 %}
+                    <h2>體重範圍 : 中度肥胖</h2>
+                    {% elif 30 > result >= 27 %}
+                    <h2>體重範圍 : 輕度肥胖</h2>
+                    {% elif 27 > result >= 24 %}
+                    <h2>體重範圍 : 過重</h2>
+                    {% elif 24 > result >= 18.5 %}
+                    <h2>體重範圍 : 正常範圍</h2>
+                    {% else %}
+                    <h2>體重範圍 : 體重過輕</h2>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if age %}
+                    {% if 0 > age %}
+                    <h2 style="color: red;">年齡：生日錯誤</h2>
+                    {% else %}
+                    <h2>年齡：{{ age }} 歲</h2>
+                    {% endif %}
+                    {% endif %}
+
+
+                    {% if birth_date %}
+                    {% if dates[birth_date.month-1] > birth_date.day %}
+                    <h2>星座：{{ constellations[birth_date.month-1] }}</h2>
+                    {% else %}
+                    <h2>星座：{{ constellations[birth_date.month] }}</h2>
+                    {% endif %}
+                    {% endif %}
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

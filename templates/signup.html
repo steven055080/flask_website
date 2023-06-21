@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}註冊{% endblock %}</title>
+    {% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="container1-md">
+        <div class="wrapper">
+            <form action="">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your email" required>
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="password" placeholder="Create a password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                    <i class="fa fa-eye-slash showHidePw"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="password" placeholder="Confirm a password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                    <i class="fa fa-eye-slash showHidePw"></i>
+                </div>
+    
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name="" id="">I agree</label>
+                </div>
+    
+                <button type="submit" class="btn">Sign up</button>
+    
+                <div class="sign-up">
+                    <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

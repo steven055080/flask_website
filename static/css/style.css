@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url('../images/img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    background: transparent;
+    backdrop-filter: blur(20px);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 375px;
+}
+
+.content h1{
+    font-size: 50px;
+}
+
+.header{
+    position: relative;
+    padding: 0 2rem;
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(3, 191, 166);
+}
+
+.header .navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.header a#home {
+    display: block;
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.5s ease;
+}
+
+.header a:link {
+    color: #fff;
+}
+
+.header a:visited {
+    color: #fff
+}
+
+.header a#home:hover {
+    color: red;
+    scale: 1.05;
+}
+
+.header a:hover {
+    color: red;
+}
+
+.logo a:link {
+    color: #fff;
+}
+
+.logo a:hover {
+    color: #fff;
+}
+
+.header .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header .toggle_btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/*DROPDOWN MENU*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: rgba(4, 193, 186, 0.644);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+.dropdown_menu.open{
+    height: 240px;
+    z-index: 1000;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu a#home{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section{
+    background: transparent;
+    backdrop-filter: blur(20px);
+    position: relative;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 150px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 992px) {
+    .navbar{
+        display: none;
+    }
+    .header .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+}

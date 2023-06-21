@@ -8,18 +8,17 @@
 }
 
 body{   
-    min-height: 100vh;
     background: url('../images/img.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .container1-md{
-
     display: flex;
     justify-content: center;
-    align-content: center;
-    margin-top: 200px;
+    align-items: center;
+    height: 80vh;
 }
 
 .wrapper{
